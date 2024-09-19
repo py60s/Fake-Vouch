@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Polo™️">
+    <meta property="og:description" content="The Official Website For Polo™️ Tools">
+    <meta property="og:image" content="logo.png">
+    <title>Polo™️</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .features-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto; /* Center the content */
+            z-index: 1;
+        }
+
+        .screenshot {
+            flex: 1;
+            margin-right: 40px; /* Increased space between image and text */
+        }
+
+        .highlighted-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .highlighted-text p {
+            margin: 0;
+            line-height: 1.4; /* Ensure proper line height */
+        }
+
+        .highlighted-text .divider {
+            border-bottom: 2px solid #ffffff; /* Line between sections */
+            margin: 20px 0;
+        }
+
+        .typing-effect-wrapper {
+            display: inline;
+            position: relative;
+        }
+
+        .typing-effect {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffcc00; /* Highlight color */
+            display: inline;
+        }
+
+        .typing-effect #dynamic-text {
+            display: inline-block;
+            border-right: 2px solid #ffcc00;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #ffcc00; }
+        }
+
+        .tool-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tool-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .tool-info {
+            flex: 1;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .tool-image {
+            flex: 1;
+        }
+
+        .tool-image img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="img/logo.png" alt="Solara Logo" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Official Website For Polo™️ Tools</h1>
+                <div class="center-buttons">
+                    <a href="https://discord.gg/xJUQateWZz" class="btn btn-primary">Discord</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-wrapper">
+                    <div class="screenshot">
+                        <img src="img/screenshot.png" alt="Scripting Utility Screenshot" class="screenshot-img">
+                    </div>
+                    <div class="highlighted-text">
+                        <p>Polo™️ isn't just a raider,<br>it's a tool of destruction.</p>
+                        <div class="divider"></div>
+                        <p class="typing-effect-wrapper">Designed to be <span id="dynamic-text">great</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools-info">
+            <div class="container">
+                <div class="tool-section">
+                    <div class="tool-info">
+                        <h3>Polo™️ Raider</h3>
+                        <p>A powerful raiding tool designed to bypass Discord’s rate limits for efficient raiding operations.</p>
+                    </div>
+                    <div class="tool-image">
+                        <img src="img/raider_screenshot.png" alt="Polo Raider Screenshot" class="screenshot-img">
+                    </div>
+                </div>
+
+                <div class="tool-section reverse">
+                    <div class="tool-info">
+                        <h3>Polo™️ Nuker</h3>
+                        <p>The ultimate nuking tool for Discord servers, optimized for fast and effective server destruction.</p>
+                    </div>
+                    <div class="tool-image">
+                        <img src="img/nuker_screenshot.png" alt="Polo Nuker Screenshot" class="screenshot-img">
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <div class="tool-info">
+                        <h3>Polo™️ Generator</h3>
+                        <p>A generator tool for quickly creating bots or accounts for Discord usage.</p>
+                    </div>
+                    <div class="tool-image">
+                        <img src="img/generator_screenshot.png" alt="Polo Generator Screenshot" class="screenshot-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dynamicText = document.getElementById('dynamic-text');
+            const words = [
+                'Effective!', 'Great!', 'Destructive!', 'Powerful!', 'Revolutionary!',
+                'Innovative!', 'Unique!', 'Exceptional!', 'Advanced!', 'Unstoppable!',
+                'Incredible!', 'Impressive!', 'Superior!', 'Dynamic!', 'Amazing!',
+                'Cutting-edge!', 'Remarkable!', 'Outstanding!', 'Phenomenal!', 'Extraordinary!',
+                'Unmatched!', 'State-of-the-art!', 'Elite!', 'Top-notch!', 'Exceptional!'
+            ];
+
+            function getRandomWord() {
+                return words[Math.floor(Math.random() * words.length)];
+            }
+
+            function typeEffect() {
+                let currentWord = 'Great';
+                let i = 0;
+                const typingSpeed = 100; // Typing speed in milliseconds
+                const deletingSpeed = 50; // Deleting speed in milliseconds
+                const pauseDuration = 2000; // Pause before deleting in milliseconds
+                const switchDuration = 2000; // Duration before switching to next word in milliseconds
+
+                function typeWord(word, callback) {
+                    let text = '';
+                    i = 0;
+                    const intervalId = setInterval(() => {
+                        if (i < word.length) {
+                            text += word.charAt(i);
+                            dynamicText.innerText = text;
+                            i++;
+                        } else {
+                            clearInterval(intervalId);
+                            setTimeout(callback, pauseDuration);
+                        }
+                    }, typingSpeed);
+                }
+
+                function deleteWord(callback) {
+                    let text = dynamicText.innerText;
+                    i = text.length;
+                    const intervalId = setInterval(() => {
+                        if (i > 0) {
+                            text = text.substring(0, i - 1);
+                            dynamicText.innerText = text;
+                            i--;
+                        } else {
+                            clearInterval(intervalId);
+                            setTimeout(callback, switchDuration);
+                        }
+                    }, deletingSpeed);
+                }
+
+                function loop() {
+                    typeWord(getRandomWord(), () => {
+                        deleteWord(loop);
+                    });
+                }
+
+                loop();
+            }
+
+            typeEffect();
+        });
+    </script>
+</body>
+</html>
